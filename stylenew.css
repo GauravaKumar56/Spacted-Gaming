@@ -509,7 +509,7 @@ nav a:hover {
     margin: 20px;
 }
 
-.contact{
+.contact {
     width: 90%;
     max-width: 1000px;
     margin: 80px auto;
@@ -519,7 +519,7 @@ nav a:hover {
     border-radius: 35px;
 }
 
-.contact{
+.contact {
     padding: 50px;
     width: 60%;
     border-radius: 50px;
@@ -568,49 +568,87 @@ footer .social-icons a {
 }
 
 @keyframes move {
-    0% { transform: translateY(100vh); }
-    100% { transform: translateY(-100vh); }
+    0% {
+        transform: translateY(100vh);
+    }
+
+    100% {
+        transform: translateY(-100vh);
+    }
 }
 
 /* RESPONSIVE */
 @media(max-width:900px) {
     header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        font-size: 13px;
+        margin-left: -56px;
+        height: 120px;
+        display: flex;
+        overflow:hidden;
+        padding-top: -190px;
+
     }
+
+      .headername{
+        display: flex;
+        margin-left: 0px;
+      }
+
+      .headername span{
+       margin-left: 12px;
+       margin-top:5px;
+      }
+
+      .logo{
+        margin-left: 20px;
+      }
+
+    .social-icons {
+        overflow: auto;
+    }
+
     nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .hero h2 {
         font-size: 45px;
     }
+
     .hero p {
         font-size: 15px;
     }
+
     .title {
         font-size: 32px;
     }
+
     .video-card {
         width: 95%;
     }
+
     .player {
         width: 95%;
     }
+
     .stat-box {
         width: 90%;
     }
+
     .tournament h2 {
         font-size: 30px;
     }
+
     .join-card {
         width: 95%;
     }
+
     .youtube-box h2 {
         font-size: 30px;
     }
+
     .logo h1 {
         font-size: 24px;
     }
@@ -748,7 +786,9 @@ footer .social-icons a {
 }
 
 @keyframes glow {
-    50% { box-shadow: 0 0 50px var(--red); }
+    50% {
+        box-shadow: 0 0 50px var(--red);
+    }
 }
 
 .register-section {
@@ -888,10 +928,12 @@ footer .social-icons a {
     .register-section {
         padding: 25px;
     }
+
     .newsletter input {
         width: 100%;
         margin-bottom: 15px;
     }
+
     .final-footer h1 {
         font-size: 30px;
     }
@@ -914,6 +956,7 @@ footer .social-icons a {
         visibility: visible;
         scale: 1.5;
     }
+
     to {
         opacity: 0;
         visibility: hidden;
