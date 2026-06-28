@@ -55,13 +55,106 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    background: rgba(0, 0, 0, .85);
+    background: black;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--red);
     backdrop-filter: blur(15px);
 }
+
+/* General Navbar Styling */
+.navbar {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* ======================================= */
+/* DROPDOWN LOGIC & STYLES                 */
+/* ======================================= */
+
+/* Keep button and content elements contained together */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the triggering dropdown button */
+.dropdown .dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Hide the dropdown box completely by default */
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  top: 100%; /* Places menu directly below the button */
+  left:-170px;
+  width:450px;
+}
+
+/* Style individual links inside the dropdown box */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+/* Hover effect on dropdown list options */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+/* CRITICAL STEP: When you hover over .dropdown, make .dropdown-content show up! */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Slight background change for the main button during active hover */
+.dropdown:hover .dropbtn {
+  background-color: #555;
+  border-radius: 4px;
+}
+
 
 .logo {
     display: flex;
@@ -579,14 +672,26 @@ footer .social-icons a {
 
 /* RESPONSIVE */
 @media(max-width:900px) {
-    header {
+    .header{
+        font-size: 13px;
+        margin-left:-30px;
+        height: 120px;
+         padding-top: -190px;
+         margin-top: -0px;
+      
+    }
+
+    .heade a{
+    font-size: 0px;
+       
+    }
+
+    .headerdrop{
         font-size: 13px;
         margin-left: -56px;
         height: 120px;
-        display: flex;
-        overflow:hidden;
-        padding-top: -190px;
-
+         padding-top: -190px;
+         overflow:visible;
     }
 
       .headername{
@@ -652,8 +757,92 @@ footer .social-icons a {
     .logo h1 {
         font-size: 24px;
     }
+
+    .loader{
+        text-align: center;
+        font-size: 9px;
+    }
+
 }
 
+/* Hide checkbox */
+#menu-toggle{
+    display:none;
+}
+
+/* Hide button on desktop */
+.menu-btn{
+    display:none;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width:768px){
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    position:relative;
+   margin-left: -56px;
+}
+
+
+.menu-btn{
+    display:block;
+    font-size:35px;
+    color:#fff;
+    cursor:pointer;
+    z-index:9999;
+
+}
+
+/* Hide Social Icons */
+.social-icons{
+    display:none;
+}
+
+/* Hide Menu */
+.menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    width:150px;
+    background:#000;
+    flex-direction:column;
+    z-index:1000;
+}
+
+
+/* Menu Links */
+.menu a{
+    padding:15px;
+    margin:0;
+    color:#fff;
+    text-decoration:none;
+    border:1px solid #3333332d;
+    margin-left: 0px;
+}
+
+.menu a:hover{
+    background:#11111175;
+}
+
+}
+
+#menu-toggle{
+    display:none;
+}
+
+.menu{
+    display:none;
+}
+
+#menu-toggle:checked ~ .menu{
+    display:flex;
+    flex-direction:column;
+}
 .games {
     width: 90%;
     max-width: 1300px;
